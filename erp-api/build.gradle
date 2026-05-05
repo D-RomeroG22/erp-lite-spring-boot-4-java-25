@@ -1,0 +1,16 @@
+plugins {
+    id 'org.springframework.boot'
+}
+
+dependencies {
+    // Spring Web solo para el módulo API
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    // Dependencias de otros módulos
+    implementation project(':erp-common')
+    implementation project(':erp-domain')
+    implementation project(':erp-application')
+    implementation project(':erp-infrastructure')
+}

@@ -1,0 +1,5 @@
+dependencies {
+    // Dependencias de la capa de aplicación
+    implementation project(':erp-common')
+    implementation project(':erp-domain')
+}
