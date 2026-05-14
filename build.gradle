@@ -30,8 +30,17 @@ subprojects {
     }
 
     dependencies {
+        //Lombok
         compileOnly 'org.projectlombok:lombok'
         annotationProcessor 'org.projectlombok:lombok'
+
+        //Mapstruct
+        implementation 'org.mapstruct:mapstruct:1.6.3'
+        annotationProcessor 'org.mapstruct:mapstruct-processor:1.6.3'
+
+        //Binding mapstruct lombok
+        implementation 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
+
         testCompileOnly 'org.projectlombok:lombok'
         testAnnotationProcessor 'org.projectlombok:lombok'
         testImplementation 'org.springframework.boot:spring-boot-starter-test'

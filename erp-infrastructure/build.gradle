@@ -3,4 +3,15 @@ dependencies {
     implementation project(':erp-common')
     implementation project(':erp-domain')
     implementation project(':erp-application')
+
+    //SQL
+    implementation 'org.postgresql:postgresql:42.7.11'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    //MONGODB
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+
+    //REDIS
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+    implementation 'org.springframework.boot:spring-boot-starter-cache'
 }
