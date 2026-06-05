@@ -1,0 +1,30 @@
+package com.dromero202.erplite.domain.shared;
+
+import java.time.Instant;
+
+/**
+ * Audit information for aggregates.
+ * Tracks creation and last update timestamps.
+ */
+public record AuditInfo(String createdBy, Instant createdAt, Instant updatedAt) {
+
+    public AuditInfo {
+        if (createdBy == null || createdBy.isBlank()) {
+            throw new IllegalArgumentException("AuditInfo createdBy cannot be null or blank");
+        }
+        if (createdAt == null) {
+            throw new IllegalArgumentException("AuditInfo createdAt cannot be null");
+        }
+        if (updatedAt == null) {
+            throw new IllegalArgumentException("AuditInfo updatedAt cannot be null");
+        }
+    }
+
+    public static AuditInfo create(String createdBy, Instant timestamp) {
+        return new AuditInfo(createdBy, timestamp, timestamp);
+    }
+
+    public AuditInfo updateTimestamp() {
+        return new AuditInfo(this.createdBy, this.createdAt, Instant.now());
+    }
+}
